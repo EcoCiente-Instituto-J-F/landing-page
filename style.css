@@ -5,7 +5,11 @@
 }
 
 body {
-    background-color:white;
+    background-color: white;
+}
+
+h2, h3, h4 {
+    margin-bottom: 30px;
 }
 
 .titulo-rosa {
@@ -58,16 +62,16 @@ body {
     margin-right: 40px;
 }
 
-.links-navbar a{
-    text-decoration: none;
+.links-navbar a {
     font-family: 'Montserrat', 'Instrument Sans', sans-serif;
+    text-decoration: underline;
     color: #D64573;
     font-size: 15px;
     font-weight: 600;
     transition: opacity 0.2s;
 }
 
-.links-navbar a:hover{
+.links-navbar a:hover {
     opacity: 0.7;
 }
 
@@ -99,11 +103,11 @@ body {
     gap: 20px;
 }
 
-.logotipo-hero img{
+.logotipo-hero img {
     height: 35px;
 }
 
-.descricao-hero{
+.descricao-hero {
     font-family: 'Instrument Sans', 'Montserrat', sans-serif;
     font-size: 22px;
     line-height: 1.6;
@@ -115,4 +119,43 @@ body {
     max-width: 500px;
     display: block;
     margin: 0 auto;
+}
+
+.container {
+    padding: 200px;
+    padding-top: 80px;
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    border-radius: 40px 40px 0 0;
+}
+
+.oferece {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.cards-oferece:not(:last-child) {
+    border-right: 2px solid #064E3B;
+}
+
+.cards-oferece:last-child {
+    border-right: none; 
+    padding-right: 0;
+}
+
+.texto-oferece {
+    font-family: 'Instrument Sans', sans-serif;
+    padding-top: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #717171;
+}
+
+.icone-oferece {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    padding-bottom: 20px;
 }

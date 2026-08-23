@@ -20,6 +20,19 @@ h2, h3, h4 {
     margin-bottom: 30px;
 }
 
+/* Evita que a tela scrolle de forma horizontal */
+.site-ajuste {
+    width: 100%;
+    overflow-x: clip;
+}
+
+.titulo-branco {
+    color: #ffffff;
+    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+}
+
 .titulo-rosa {
     color: #D64573;
     font-family: 'Montserrat', 'Instrument Sans', sans-serif;
@@ -249,11 +262,10 @@ input[name="modo-card"] {
     border-radius: 50px;
     color: #D64573;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     user-select: none;
 }
 
-/* CORREÇÃO 1: Nome da classe ajustado para .chave-alterar */
 #entrada-abas-condominio:checked ~ .chave-alterar label[for="entrada-abas-condominio"] {
     background-color: #D64573;
     color: #ffffff;
@@ -264,13 +276,11 @@ input[name="modo-card"] {
     color: #ffffff;
 }
 
-/* Esconde as duas listas por padrão */
 .lista-vantagens-condominio,
 .lista-vantagens-cooperativa {
     display: none;
 }
 
-/* Exibe a lista correspondente ao rádio selecionado */
 #entrada-abas-condominio:checked ~ .lista-vantagens-condominio {
     display: flex;
     flex-direction: column;
@@ -281,9 +291,78 @@ input[name="modo-card"] {
     flex-direction: column;
 }
 
-/* CORREÇÃO 3: Troca a imagem de fundo diretamente no card principal */
 .card-cond-coop:has(#entrada-abas-cooperativa:checked) {
     background-image: url('assets/imagemCatadores.png');
     background-size: cover;
     background-position: center;
+}
+
+.container-verde {
+    position: relative;
+    margin-top: 120px;
+    background-color: #064E3B;
+    padding: 80px var(--margem-lateral); 
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: none; 
+}
+
+.lista-funcionalidades {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    list-style: none;
+    margin-top: 50px;
+    padding: 0;
+}
+
+.card-funcionalidades {
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 368px;
+
+}
+
+.imagem-funcionalidades img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover; 
+    display: block;
+}
+
+.conteudo-card-func {
+    padding: 24px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.conteudo-card-func h3 {
+    color: #064E3B;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.linha-rosa {
+    width: 40px;
+    height: 3px;
+    background-color: #D64573;
+    border-radius: 2px;
+    margin-bottom: 16px;
+}
+
+.conteudo-card-func p {
+    color: #717171;
+    font-size: 14px;
+    line-height: 1.5;
 }

@@ -366,3 +366,82 @@ input[name="modo-card"] {
     font-size: 14px;
     line-height: 1.5;
 }
+
+.beneficios {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    background: url('assets/imagemCasas.png') center/cover no-repeat;
+    border-radius: 30px;
+    padding: 60px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.descricao-beneficios {
+    max-width: 520px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+.badge-beneficios {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid #0EB488;
+    background: rgba(6, 78, 59, 0.6);
+    padding: 8px;
+    border-radius: 50px;
+    font-size: 16px;
+    margin-bottom: 24px;
+    width: 130px;
+}
+
+.icone-check {
+    background-color: #DFEADE;
+    color: #D64573;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.grid-icones-beneficios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 650px;
+}
+
+.item-icone-beneficio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.item-icone-beneficio:last-child {
+    border-right: none;
+}
+
+.item-icone-beneficio img {
+    width: 32px;
+    height: 32px;
+}
+
+.item-icone-beneficio span {
+    font-size: 13px;
+    line-height: 1.3;
+    color: #ffffff;
+}

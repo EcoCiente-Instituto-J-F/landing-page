@@ -15,7 +15,7 @@
 <body>
     <div class="site-ajuste">
         <header class="header">
-            <div class="navbar">
+            <nav class="navbar">
                 <div class="logotipo-navbar">
                     <img src="assets/logotipo-preto.svg" alt="Logo do EcoCiente">
                 </div>
@@ -26,7 +26,7 @@
                     <li><a href="#nossaMissao">Nossa Missão</a></li>
                     <li><a href="#duvidas">Dúvidas</a></li>
                 </ul>
-            </div>
+            </nav>
         </header>
 
         <section class="hero">
@@ -103,53 +103,84 @@
                 <div class="titulo-branco" style="font-size: 25px; font-weight: normal; text-align: center; margin: auto; margin-top: 30px; max-width: 640px;">Conectamos tecnologia, pessoas e cooperativas para um futuro mais sustentável.</div>
 
 
-            <ul class="lista-funcionalidades">
-                <li class="card-funcionalidades">
-                    <div class="imagem-funcionalidades">
-                        <img src="assets/informe.png" alt="Informe e engaje">
-                    </div>
-                    <div class="conteudo-card-func">
-                        <h3 class="titulo-verde">Informe e engaje</h3>
-                        <span class="linha-rosa"></span>
-                        <p class="texto-oferece">Informe os dados do seu condomínio, compartilhe informações sobre a geração de resíduos e solicite uma coleta no período disponível.</p>
-                    </div>
-                </li>
+                <ul class="lista-funcionalidades">
+                    <li class="card-funcionalidades">
+                        <div class="imagem-funcionalidades">
+                            <img src="assets/informe.png" alt="Informe e engaje">
+                        </div>
+                        <div class="conteudo-card-func">
+                            <h3 class="titulo-verde">Informe e engaje</h3>
+                            <span class="linha-rosa"></span>
+                            <p class="texto-oferece" style="font-weight: 600;">Informe os dados do seu condomínio, compartilhe informações sobre a geração de resíduos e solicite uma coleta no período disponível.</p>
+                        </div>
+                    </li>
 
-                <li class="card-funcionalidades">
-                    <div class="imagem-funcionalidades">
-                        <img src="assets/coleta.png" alt="Coleta responsável">
-                    </div>
-                    <div class="conteudo-card-func">
-                        <h3 class="titulo-verde">Coleta responsável</h3>
-                        <span class="linha-rosa"></span>
-                        <p class="texto-oferece">A cooperativa parceira realiza a coleta de forma segura, responsável e comprometida com a destinação adequada dos materiais recicláveis.</p>
-                    </div>
-                </li>
+                    <li class="card-funcionalidades">
+                        <div class="imagem-funcionalidades">
+                            <img src="assets/coleta.png" alt="Coleta responsável">
+                        </div>
+                        <div class="conteudo-card-func" >
+                            <h3 class="titulo-verde">Coleta responsável</h3>
+                            <span class="linha-rosa"></span>
+                            <p class="texto-oferece" style="font-weight: 600;">A cooperativa parceira realiza a coleta de forma segura, responsável e comprometida com a destinação adequada dos materiais recicláveis.</p>
+                        </div>
+                    </li>
 
-                <li class="card-funcionalidades">
-                    <div class="imagem-funcionalidades">
-                        <img src="assets/acompanhe-resultados.png" alt="Acompanhe resultados">
-                    </div>
-                    <div class="conteudo-card-func">
-                        <h3 class="titulo-verde">Acompanhe</h3>
-                        <span class="linha-rosa"></span>
-                        <p class="texto-oferece">Acompanhe os resultados e visualize os impactos positivos gerados pela gestão responsável dos resíduos do seu condomínio.</p>
-                    </div>
-                </li>
+                    <li class="card-funcionalidades">
+                        <div class="imagem-funcionalidades">
+                            <img src="assets/acompanhe-resultados.png" alt="Acompanhe resultados">
+                        </div>
+                        <div class="conteudo-card-func">
+                            <h3 class="titulo-verde">Acompanhe</h3>
+                            <span class="linha-rosa"></span>
+                            <p class="texto-oferece" style="font-weight: 600;">Acompanhe os resultados e visualize os impactos positivos gerados pela gestão responsável dos resíduos do seu condomínio.</p>
+                        </div>
+                    </li>
 
-                <li class="card-funcionalidades">
-                    <div class="imagem-funcionalidades">
-                        <img src="assets/conecte.png" alt="Conecte-se">
-                    </div>
-                    <div class="conteudo-card-func">
-                        <h3 class="titulo-verde">Conecte-se</h3>
-                        <span class="linha-rosa"></span>
-                        <p class="texto-oferece" >Acompanhe os resultados e visualize os impactos positivos gerados pela gestão responsável dos resíduos do seu condomínio.</p>
-                    </div>
-                </li>
-            </ul>
-                
+                    <li class="card-funcionalidades">
+                        <div class="imagem-funcionalidades">
+                            <img src="assets/conecte.png" alt="Conecte-se">
+                        </div>
+                        <div class="conteudo-card-func">
+                            <h3 class="titulo-verde">Conecte-se</h3>
+                            <span class="linha-rosa"></span>
+                            <p class="texto-oferece" style="font-weight: 600;">Acompanhe os resultados e visualize os impactos positivos gerados pela gestão responsável dos resíduos do seu condomínio.</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
+
+            <section class="beneficios" id="beneficios">
+                <div class="descricao-beneficios" style=" display: flex; flex-direction: column; gap: 25px;">
+                    <div class="badge-beneficios">
+                        <span class="icone-check">✓</span>
+                        <span>Benefícios</span>
+                    </div>
+                    <div class="titulo-branco" style="line-height: normal; max-width: 390px;">
+                        <p>Seu condomínio <span class="titulo-rosa">merece o melhor</span></p>
+                    </div>
+                    <p style="max-width: 390px;">Nosso app foi criado para simplificar a gestão de resíduos em condomínios e conectar você às cooperativas de reciclagem. Com ele, você acompanha coletas, registros e parcerias com praticidade, segurança e transparência.</p>
+
+                    <div class="grid-icones-beneficios">
+                        <div class="item-icone-beneficio">
+                            <img src="assets/icone-folha-rosa.svg" alt="Sustentabilidade">
+                            <span>Sustentabilidade na prática</span>
+                        </div>
+                        <div class="item-icone-beneficio">
+                            <img src="assets/icone-shield-rosa.svg" alt="Gestão">
+                            <span>Gestão que transforma</span>
+                        </div>
+                        <div class="item-icone-beneficio">
+                            <img src="assets/people-icon-rosa.svg" alt="Parceirias">
+                            <span>Parceirias que fazem a diferença</span>
+                        </div>
+                        <div class="item-icone-beneficio">
+                            <img src="assets/grafico-icon-rosa.svg" alt="Resultados">
+                            <span>Resultados que geram impacto</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </body>

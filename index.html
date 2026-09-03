@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <div class="site-ajuste">
@@ -48,6 +47,7 @@
                 </div>
             </div>
         </section>
+
         <div class="container">
             <h2 class="titulo-rosa" style="display: flex; padding-bottom: 30px;">O EcoCiente oferece</h2>
             <div class="oferece">
@@ -73,6 +73,7 @@
                     <p class="texto-oferece">Facilitamos a gestão dos resíduos recicláveis e adote práticas alinhadas às normas ambientais, promovendo mais organização e sustentabilidade para o seu condomínio.</p>
                 </div>
             </div>
+            
             <div class="card-cond-coop">
                 <h2 class="titulo-verde" style="color: white; max-width: 380px;">Com o EcoCiente você ganha:</h2>
                 <input type="radio" id="entrada-abas-condominio" name="modo-card" checked>
@@ -101,7 +102,6 @@
             <div class="container-verde" id="funcionalidades">
                 <h2 class="titulo-branco" style="text-align: center; max-width: 650px; margin: auto;">Tudo que seu condomínio precisa para reciclar melhor</h2>
                 <div class="titulo-branco" style="font-size: 25px; font-weight: normal; text-align: center; margin: auto; margin-top: 30px; max-width: 640px;">Conectamos tecnologia, pessoas e cooperativas para um futuro mais sustentável.</div>
-
 
                 <ul class="lista-funcionalidades">
                     <li class="card-funcionalidades">
@@ -179,6 +179,128 @@
                             <span>Resultados que geram impacto</span>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section class="planos" id="planos">
+                <h2 class="titulo-planos">Planos de assinatura</h2>
+
+                <div class="grid-planos">
+                    <article class="card-plano">
+                        <div class="cabecalho-card">
+                            <img src="assets/icone-comunidade.svg" alt="Ícone Comunidade" class="icone-plano">
+                            <div>
+                                <span class="subtitulo-card">GRATUITO</span>
+                                <h3 class="nome-plano">Comunidade</h3>
+                                <p class="descricao-plano">Ideal para você que quer fazer a diferença.</p>
+                            </div>
+                        </div>
+
+                        <div class="preco-container">
+                            <span class="valor">R$ 0,00</span>
+                            <span class="periodo">Gratuito</span>
+                        </div>
+
+                        <hr class="divisor-card">
+
+                        <ul class="lista-recursos">
+                            <li><span class="check-icone">✓</span> Conheça pontos de coleta próximos</li>
+                            <li><span class="check-icone">✓</span> Descubra curiosidades</li>
+                            <li><span class="check-icone">✓</span> Acompanhe sua contribuição</li>
+                            <li><span class="check-icone">✓</span> Teste seu conhecimento</li>
+                        </ul>
+
+                        <button class="botao-plano">Começar agora &rarr;</button>
+                    </article>
+
+                    <article class="card-plano card-destaque">
+                        <div class="tag-destaque"><span style="color: yellow;">★</span> Mais escolhido</div>
+
+                        <div class="cabecalho-card">
+                            <img src="assets/icone-empresarial-residencial.svg" alt="Ícone Empresarial" class="icone-plano">
+                            <div>
+                                <span class="subtitulo-card">PLANO</span>
+                                <h3 class="nome-plano">Empresarial Residencial</h3>
+                                <p class="descricao-plano">Ideal para condomínios empresariais e residenciais.</p>
+                            </div>
+                        </div>
+
+                        <input type="radio" id="mensal-empresarial" name="periodo-empresarial" checked>
+                        <input type="radio" id="anual-empresarial" name="periodo-empresarial">
+
+                        <div class="chave-alterar-plano">
+                            <label for="mensal-empresarial" class="botao-periodo">Mensal</label>
+                            <label for="anual-empresarial" class="botao-periodo">Anual</label>
+                        </div>
+
+                        <div class="preco-container preco-mensal">
+                            <span class="valor">R$ 4,00</span>
+                            <span class="periodo">Por apartamento / mês</span>
+                        </div>
+
+                        <div class="preco-container preco-anual">
+                            <div class="header-preco-anual">
+                                <span class="valor">R$ 3,40</span>
+                                <span class="badge-desconto-card">-15%</span>
+                            </div>
+                            <span class="periodo">Por apartamento / anual</span>
+                        </div>
+
+                        <hr class="divisor-card">
+
+                        <ul class="lista-recursos">
+                            <li><span class="check-icone">✓</span> Coleta programada e sob demanda</li>
+                            <li><span class="check-icone">✓</span> Gestão completa de resíduos</li>
+                            <li><span class="check-icone">✓</span> Dashboard do síndico e do gestor</li>
+                            <li><span class="check-icone">✓</span> Relatórios e históricos de coleta</li>
+                        </ul>
+
+                        <button class="botao-plano">Começar agora &rarr;</button>
+                    </article>
+
+                    <article class="card-plano">
+                        <div class="cabecalho-card">
+                            <img src="assets/icone-industrial.svg" alt="Ícone Industrial" class="icone-plano">
+                            <div>
+                                <span class="subtitulo-card">PLANO</span>
+                                <h3 class="nome-plano">Industrial</h3>
+                                <p class="descricao-plano">Ideal para grandes empresas e grandes áreas.</p>
+                            </div>
+                        </div>
+
+                        <input type="radio" id="mensal-industrial" name="periodo-industrial" checked>
+                        <input type="radio" id="anual-industrial" name="periodo-industrial">
+
+                        <div class="chave-alterar-plano">
+                            <label for="mensal-industrial" class="botao-periodo">Mensal</label>
+                            <label for="anual-industrial" class="botao-periodo">Anual</label>
+                        </div>
+
+                        <div class="preco-container preco-mensal">
+                            <span class="valor">R$ 0,50</span>
+                            <span class="periodo">Por m² / mês</span>
+                        </div>
+
+
+                        <div class="preco-container preco-anual">
+                            <div class="header-preco-anual">
+                                <span class="valor">R$ 0,42</span>
+                                <span class="badge-desconto-card">-15%</span>
+                            </div>
+                            <span class="periodo">Por m² / anual</span>
+                        </div>
+
+                        <hr class="divisor-card">
+
+                        <ul class="lista-recursos">
+                            <li><span class="check-icone">✓</span> Solução completa para indústrias</li>
+                            <li><span class="check-icone">✓</span> Coleta personalizada</li>
+                            <li><span class="check-icone">✓</span> Gestão de grandes volumes</li>
+                            <li><span class="check-icone">✓</span> Dashboards e relatórios avançados</li>
+                        </ul>
+
+                        <button class="botao-plano">Começar agora &rarr;</button>
+                    </article>
                 </div>
             </section>
         </div>

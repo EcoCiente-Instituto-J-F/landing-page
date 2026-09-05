@@ -12,8 +12,21 @@
     --margem-lateral: 200px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: white;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ----- Faz com que o navbar não cubra os títulos durante a transição ----- */
+[id] {
+    scroll-margin-top: 110px;
 }
 
 h2, h3, h4 {
@@ -26,31 +39,35 @@ h2, h3, h4 {
     overflow-x: clip;
 }
 
-.titulo-branco {
-    color: #ffffff;
-    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-}
+/* ---------- Tipografia ---------- */
 
-.titulo-rosa {
-    color: #D64573;
-    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-}
-
+.titulo-branco,
+.titulo-rosa,
 .titulo-verde {
-    color: #064E3B;
     font-family: 'Montserrat', 'Instrument Sans', sans-serif;
     font-weight: 600;
-    font-size: 35px;
+    font-size: clamp(24px, 3.4vw, 35px);
 }
+
+.titulo-branco { color: #ffffff; }
+.titulo-rosa   { color: #D64573; }
+.titulo-verde  { color: #064E3B; }
 
 .texto-padrao {
     font-size: 16px;
     font-weight: 400;
     color: #717171;
+}
+
+/* ---------- Navbar ---------- */
+
+.header {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
 }
 
 .navbar {
@@ -64,23 +81,21 @@ h2, h3, h4 {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.header {
-    position: fixed;
-    top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-}
-
 .logotipo-navbar {
     margin-left: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.logotipo-navbar img {
+    height: 30px;
 }
 
 .links-navbar {
     display: flex;
     gap: 50px;
     margin-right: 40px;
+    list-style: none;
 }
 
 .links-navbar a {
@@ -90,17 +105,45 @@ h2, h3, h4 {
     font-size: 15px;
     font-weight: 600;
     transition: opacity 0.2s;
+    white-space: nowrap;
 }
 
 .links-navbar a:hover {
     opacity: 0.7;
 }
 
+/* Botão hamburguer (só aparece no mobile) */
+.entrada-menu {
+    display: none;
+}
+
+.botao-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.botao-menu span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #D64573;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+/* ---------- Hero ---------- */
+
 .hero {
     position: sticky;
     top: 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
     z-index: 1;
     background: url('assets/fundoHero.jpg') center/cover no-repeat;
     display: flex;
@@ -126,11 +169,20 @@ h2, h3, h4 {
 
 .logotipo-hero img {
     height: 35px;
+    width: auto;
+}
+
+.titulo-hero {
+    color: #FE2469;
+}
+
+.titulo-hero-verde {
+    color: #0EB488;
 }
 
 .descricao-hero {
     font-family: 'Instrument Sans', 'Montserrat', sans-serif;
-    font-size: 22px;
+    font-size: clamp(16px, 1.8vw, 22px);
     line-height: 1.6;
     color: white;
     max-width: 450px;
@@ -143,12 +195,20 @@ h2, h3, h4 {
     margin: 0 auto;
 }
 
+/* ---------- Container principal ---------- */
+
 .container {
     padding: var(--espaco-secao) var(--margem-lateral);
     position: relative;
     z-index: 2;
     background-color: white;
     border-radius: 40px 40px 0 0;
+}
+
+/* ---------- O EcoCiente oferece ---------- */
+
+.titulo-secao {
+    padding-bottom: 30px;
 }
 
 .oferece {
@@ -158,8 +218,7 @@ h2, h3, h4 {
 }
 
 .card-oferece {
-    padding: 0 20px; 
-    box-sizing: border-box;
+    padding: 0 20px;
 }
 
 .card-oferece:first-child {
@@ -174,6 +233,10 @@ h2, h3, h4 {
     border-right: 2px solid #DFEADE;
 }
 
+.titulo-card-oferece {
+    font-size: clamp(19px, 2.2vw, 25px);
+}
+
 .texto-oferece {
     font-family: 'Instrument Sans', sans-serif;
     padding-top: 15px;
@@ -185,10 +248,12 @@ h2, h3, h4 {
 
 .icone-oferece {
     display: flex;
-    align-items: flex-start; 
-    justify-content: flex-start; 
-    padding-bottom: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 30px;
 }
+
+/* ---------- Card condomínio / cooperativa ---------- */
 
 .card-cond-coop {
     margin-top: 120px;
@@ -200,9 +265,8 @@ h2, h3, h4 {
     padding: 80px;
 }
 
-.card-cond-coop ul li {
-    line-height: 20px;
-    margin-bottom: 10px;
+.titulo-cond-coop {
+    max-width: 380px;
 }
 
 .conteudo-card {
@@ -218,18 +282,24 @@ h2, h3, h4 {
 .lista-check li {
     display: flex;
     align-items: center;
-    gap: 12px; 
+    gap: 12px;
     color: white;
-    font-size: 18px;
+    line-height: 1.4;
     margin-bottom: 12px;
+}
+
+.item-vantagem {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: clamp(15px, 2vw, 20px);
+    font-weight: 500;
 }
 
 .lista-check li::before {
     flex-shrink: 0;
     content: '';
     display: inline-block;
-    width: 30px;  
-    height: 30px; 
+    width: 30px;
+    height: 30px;
     background-image: url('assets/check.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -246,13 +316,14 @@ input[name="modo-card"] {
     padding: 3px;
     border-radius: 50px;
     margin-bottom: 30px;
+    max-width: 100%;
 }
 
 .botao-alterar {
     border: none;
     background: transparent;
     padding: 6px 18px;
-    font-family: inherit;
+    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     border-radius: 50px;
@@ -260,6 +331,7 @@ input[name="modo-card"] {
     cursor: pointer;
     transition: all 0.5s ease;
     user-select: none;
+    white-space: nowrap;
 }
 
 #entrada-abas-condominio:checked ~ .chave-alterar label[for="entrada-abas-condominio"] {
@@ -293,17 +365,31 @@ input[name="modo-card"] {
     background-position: center;
 }
 
+/* ---------- Funcionalidades (faixa verde) ---------- */
+
 .container-verde {
     position: relative;
     margin-top: 120px;
     background-color: #064E3B;
-    padding: 80px var(--margem-lateral); 
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    max-width: none; 
+    padding: 80px var(--margem-lateral);
+    margin-left: calc(var(--margem-lateral) * -1);
+    margin-right: calc(var(--margem-lateral) * -1);
+}
+
+.titulo-funcionalidades {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.subtitulo-funcionalidades {
+    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
+    color: #ffffff;
+    font-size: clamp(16px, 2vw, 25px);
+    font-weight: 400;
+    text-align: center;
+    margin: 30px auto 0;
+    max-width: 640px;
 }
 
 .lista-funcionalidades {
@@ -318,7 +404,7 @@ input[name="modo-card"] {
 .card-funcionalidades {
     background-color: #ffffff;
     border-radius: 20px;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -328,7 +414,7 @@ input[name="modo-card"] {
 .imagem-funcionalidades img {
     width: 100%;
     height: 130px;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
 }
 
@@ -356,11 +442,15 @@ input[name="modo-card"] {
     margin-bottom: 16px;
 }
 
-.conteudo-card-func p {
+.texto-card-func {
+    font-family: 'Instrument Sans', sans-serif;
     color: #717171;
     font-size: 14px;
+    font-weight: 600;
     line-height: 1.5;
 }
+
+/* ---------- Benefícios ---------- */
 
 .beneficios {
     max-width: 1200px;
@@ -380,6 +470,9 @@ input[name="modo-card"] {
     line-height: 1.6;
     color: #ffffff;
     font-family: 'Instrument Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .badge-beneficios {
@@ -391,7 +484,6 @@ input[name="modo-card"] {
     padding: 8px;
     border-radius: 50px;
     font-size: 16px;
-    margin-bottom: 24px;
     width: 130px;
 }
 
@@ -406,6 +498,20 @@ input[name="modo-card"] {
     justify-content: center;
     font-size: 12px;
     font-weight: bold;
+    flex-shrink: 0;
+}
+
+.titulo-beneficios {
+    line-height: normal;
+    max-width: 390px;
+}
+
+.titulo-beneficios .titulo-rosa {
+    font-size: inherit;
+}
+
+.texto-beneficios {
+    max-width: 390px;
 }
 
 .grid-icones-beneficios {
@@ -422,6 +528,7 @@ input[name="modo-card"] {
     align-items: flex-start;
     gap: 12px;
     border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding-right: 12px;
 }
 
 .item-icone-beneficio:last-child {
@@ -439,6 +546,8 @@ input[name="modo-card"] {
     color: #ffffff;
 }
 
+/* ---------- Planos ---------- */
+
 .planos {
     max-width: 1200px;
     margin: var(--espaco-secao) auto;
@@ -449,7 +558,7 @@ input[name="modo-card"] {
 .titulo-planos {
     text-align: center;
     color: #D64573;
-    font-size: 38px;
+    font-size: clamp(26px, 3.6vw, 38px);
     font-weight: 700;
     margin-bottom: 60px;
 }
@@ -458,7 +567,6 @@ input[name="modo-card"] {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-
 }
 
 .card-plano {
@@ -483,6 +591,11 @@ input[name="modo-card"] {
     font-weight: 600;
     padding: 6px 18px;
     border-radius: 50px;
+    white-space: nowrap;
+}
+
+.estrela-destaque {
+    color: yellow;
 }
 
 .cabecalho-card {
@@ -501,7 +614,9 @@ input[name="modo-card"] {
 }
 
 .icone-plano {
+    width: 80px;
     max-width: 80px;
+    flex-shrink: 0;
 }
 
 .subtitulo-card {
@@ -561,7 +676,7 @@ input[name^="periodo-"] {
 
 .valor {
     display: block;
-    font-size: 42px;
+    font-size: clamp(32px, 4vw, 42px);
     font-weight: 700;
     color: #555555;
 }
@@ -656,138 +771,603 @@ input[id^="anual-"]:checked ~ .preco-anual {
     animation: surgirBadge 0.3s ease;
 }
 
+@keyframes surgirBadge {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
 
 
 @media (max-width: 1200px) {
     :root {
-        --margem-lateral: 40px; 
-    }
-
-    .container-hero {
-        padding: 0 20px;
-    }
-
-    .grid-funcionalidades,
-    .lista-funcionalidades {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .links-navbar a {
-        font-size: 10px;
-        font-weight: 600;
-    }
-
-    .logotipo-navbar {
-        margin-left: 20px;
-    }
-}
-
-
-@media (max-width: 900px) {
-    :root {
-        --espaco-secao: 60px;
+        --margem-lateral: 40px;
+        --espaco-secao: 90px;
     }
 
     .navbar {
-        width: 95%;
-        padding: 10px 20px;
+        width: 94%;
+        padding: 12px 24px;
+    }
+
+    .logotipo-navbar {
+        margin-left: 15px;
     }
 
     .links-navbar {
+        gap: 28px;
+        margin-right: 15px;
+    }
+
+    .links-navbar a {
+        font-size: 13px;
+    }
+
+    .container-hero {
+        max-width: 1000px;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .titulo-rosa,
+    .titulo-verde {
+        font-size: 32px;
+    }
+
+    .titulo-beneficios {
+        line-height: normal;
+        max-width: 65%;
+    }       
+
+    .descricao-hero {
+        font-size: 20px;
+    }
+
+    .mockups-hero img {
+        max-width: 440px;
+    }
+
+    .lista-funcionalidades {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-planos {
         gap: 20px;
-        margin-right: 10;
+    }
+
+    .card-plano {
+        padding: 30px 20px;
+    }
+
+    .valor {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    :root {
+        --espaco-secao: 70px;
+        --margem-lateral: 30px;
+    }
+
+    .navbar {
+        width: 94%;
+        padding: 10px 16px;
+        flex-wrap: wrap;
+        border-radius: 28px;
+    }
+
+    .logotipo-navbar {
+        margin-left: 4px;
+    }
+
+    .botao-menu {
+        display: flex;
+    }
+
+    .links-navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        margin: 8px 0 4px;
+        border-top: 1px solid #F0E4E9;
+    }
+
+    .entrada-menu:checked ~ .links-navbar {
+        display: flex;
+    }
+
+    .links-navbar li {
+        padding: 12px 4px;
+    }
+
+    .links-navbar li + li {
+        border-top: 1px solid #F7F0F3;
+    }
+
+    .links-navbar a {
+        font-size: 15px;
+    }
+
+    .entrada-menu:checked ~ .botao-menu span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .entrada-menu:checked ~ .botao-menu span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .entrada-menu:checked ~ .botao-menu span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .logotipo-navbar {
+        margin-left: 5px;
+    }
+
+    .links-navbar {
+        gap: 18px;
+        margin-right: 5px;
+    }
+
+    .links-navbar a {
+        font-size: 11px;
     }
 
     .hero {
-        width: 100%;
-        background-image: url(assets/fundoHero.jpg);
-        
+        min-height: auto;
+        padding: 140px 30px 70px;
     }
-    
 
     .container-hero {
-        text-align: center;
         grid-template-columns: 1fr;
-        align-items: center;
+        text-align: center;
+        gap: 40px;
     }
 
     .conteudo-hero {
-        .titulo-rosa, .titulo-verde{
-            font-size:  30px;
-        }
-
-        .descricao-hero {
-            font-size: 20px;
-        }
-
         align-items: center;
+        gap: 20px;
+    }
+
+    .logotipo-hero img {
+        height: 32px;
+    }
+
+    .titulo-rosa,
+    .titulo-verde {
+        font-size: 30px;
+    }
+
+    .descricao-hero {
+        max-width: 650px;
+        font-size: 18px;
+    }
+
+    .mockups-hero img {
+        max-width: 400px;
     }
 
     .oferece {
+        max-width: 100px;
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
+    .card-oferece {
+        padding: 0 0 25px;
+    }
+
     .card-oferece:not(:last-child) {
         border-right: none;
-        border-bottom: 2px solid #DFEADE; 
-        padding-bottom: 20px;
+        border-bottom: 2px solid #DFEADE;
     }
 
-    .grid-planos {
-        grid-template-columns: 1fr; 
+    .card-oferece:last-child {
+        padding-bottom: 0;
     }
 
-    .cabecalho-card {
-        min-height: auto; 
+    .texto-oferece {
+        max-width: 600px;
+    }
+
+    .card-cond-coop {
+        margin-top: 80px;
+        padding: 55px 45px;
+    }
+
+    .container-verde {
+        margin-top: 80px;
+        padding: 70px var(--margem-lateral);
+    }
+
+    .lista-funcionalidades {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .card-funcionalidades {
+        min-height: 350px;
+    }
+
+    .beneficios {
+        margin: 60px auto;
+        padding: 50px 40px;
+    }
+
+    .descricao-beneficios {
+        max-width: 600px;
     }
 
     .grid-icones-beneficios {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+        gap: 20px;
+    }
+
+    .item-icone-beneficio:nth-child(2) {
+        border-right: none;
+    }
+
+    .planos {
+        padding: 0 10px;
+    }
+
+    .grid-planos {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+        margin: 0 auto;
+        gap: 30px;
+    }
+
+    .card-plano {
+        width: 100%;
+    }
+
+    .cabecalho-card {
+        min-height: auto;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+
     :root {
-        --margem-lateral: 16px;
+        --espaco-secao: 55px;
+        --margem-lateral: 20px;
     }
 
-    .titulo-branco,
-    .titulo-rosa,
-    .titulo-verde,
-    .titulo-planos {
-        font-size: px; 
-    }
-
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-        border-radius: 20px;
+    .header {
+        top: 10px;
     }
 
     .logotipo-navbar {
         margin-left: 0;
     }
 
+    .links-navbar {
+        width: 100%;
+        margin: 0;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .links-navbar a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 145px 20px 50px;
+    }
+
+    .container-hero {
+        gap: 30px;
+        padding: 0;
+    }
+
+    .logotipo-hero img {
+        height: 28px;
+        max-width: 100%;
+    }
+
+    .titulo-rosa,
+    .titulo-verde {
+        font-size: 27px;
+        line-height: 1.2;
+    }
+
+    .descricao-hero {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .mockups-hero img {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .container {
+        padding: var(--espaco-secao) var(--margem-lateral);
+        border-radius: 25px 25px 0 0;
+    }
+
+    .titulo-branco,
+    .titulo-rosa,
+    .titulo-verde {
+        font-size: 27px;
+    }
+
+    .oferece {
+        gap: 25px;
+    }
+
+    .card-oferece {
+        padding-bottom: 25px;
+    }
+
+    .card-oferece .titulo-verde {
+        font-size: 21px !important;
+    }
+
+    .texto-oferece {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
     .card-cond-coop {
-        padding: 30px 20px;
+        margin-top: 65px;
+        padding: 35px 25px;
+        border-radius: 20px;
+    }
+
+    .card-cond-coop h2 {
+        font-size: 25px;
+    }
+
+    .chave-alterar {
+        width: 100%;
+        display: flex;
+        margin-bottom: 25px;
+    }
+
+    .botao-alterar {
+        flex: 1;
+        text-align: center;
+        padding: 8px 10px;
+    }
+
+    .lista-check li {
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 16px !important;
+        line-height: 1.4;
+    }
+
+    .lista-check li::before {
+        width: 25px;
+        height: 25px;
+    }
+
+    .container-verde {
+        margin-top: 60px;
+        padding: 55px var(--margem-lateral);
+    }
+
+    .container-verde > .titulo-branco {
+        font-size: 27px;
     }
 
     .lista-funcionalidades {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 35px;
+    }
+
+    .card-funcionalidades {
+        min-height: 0;
+    }
+
+    .imagem-funcionalidades img {
+        height: 180px;
+    }
+
+    .conteudo-card-func {
+        padding: 22px 18px 25px;
+    }
+
+    .conteudo-card-func h3 {
+        font-size: 19px;
+    }
+
+    .conteudo-card-func p {
+        font-size: 14px;
+    }
+
+    .beneficios {
+        margin: 50px auto;
+        padding: 35px 25px;
+        border-radius: 22px;
+    }
+
+    .descricao-beneficios {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .grid-icones-beneficios {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 100%;
+    }
+
+    .item-icone-beneficio,
+    .item-icone-beneficio:nth-child(2) {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 15px;
+    }
+
+    .item-icone-beneficio:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .planos {
+        margin: 60px auto;
+        padding: 0;
+    }
+
+    .titulo-planos {
+        font-size: 30px;
+        margin-bottom: 45px;
+    }
+
+    .grid-planos {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .card-plano {
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+
+    .icone-plano {
+        max-width: 65px;
+    }
+
+    .nome-plano {
+        font-size: 19px;
+    }
+
+    .descricao-plano {
+        font-size: 13px;
+    }
+
+    .valor {
+        font-size: 34px;
+    }
+
+    .lista-recursos li {
+        font-size: 14px;
+        line-height: 1.4;
+        align-items: flex-start;
+    }
+
+    .botao-plano {
+        min-height: 52px;
+    }
+
+    .tag-destaque {
+        font-size: 11px;
+        padding: 6px 14px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 420px) {
+
+    :root {
+        --margem-lateral: 16px;
+        --espaco-secao: 45px;
+    }
+
+    .navbar {
+        width: calc(100% - 16px);
+        padding: 10px 12px;
+    }
+
+    .links-navbar {
+        gap: 8px 12px;
+    }
+
+    .links-navbar a {
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 140px 16px 45px;
+    }
+
+    .titulo-rosa,
+    .titulo-verde {
+        font-size: 24px;
+    }
+
+    .descricao-hero {
+        font-size: 15px;
+    }
+
+    .mockups-hero img {
+        max-width: 290px;
+    }
+
+    .titulo-branco,
+    .titulo-rosa,
+    .titulo-verde {
+        font-size: 24px;
+    }
+
+    .titulo-planos {
+        font-size: 27px;
+    }
+
+    .card-cond-coop {
+        padding: 30px 18px;
+    }
+
+    .card-cond-coop h2 {
+        font-size: 23px;
+    }
+
+    .botao-alterar {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+
+    .lista-check li {
+        font-size: 14px !important;
+    }
+
+    .container-verde {
+        padding: 45px var(--margem-lateral);
+    }
+
+    .imagem-funcionalidades img {
+        height: 150px;
     }
 
     .beneficios {
         padding: 30px 20px;
     }
 
-    .grid-icones-beneficios {
-        grid-template-columns: 1fr;
+    .badge-beneficios {
+        width: auto;
+        align-self: flex-start;
     }
 
-    .item-icone-beneficio {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        padding-bottom: 12px;
+    .card-plano {
+        padding: 28px 18px;
+    }
+
+    .cabecalho-card {
+        gap: 10px;
+    }
+
+    .icone-plano {
+        max-width: 55px;
+    }
+
+    .nome-plano {
+        font-size: 18px;
+    }
+
+    .valor {
+        font-size: 30px;
+    }
+
+    .botao-plano {
+        font-size: 14px;
     }
 }

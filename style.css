@@ -143,13 +143,15 @@ h2, h3, h4 {
     position: sticky;
     top: 0;
     width: 100%;
+    min-height: 100vh;
     min-height: 100dvh;
     z-index: 1;
     background: url('assets/fundoHero.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 20px 60px;
+    padding: 120px 20px 80px;
+    box-sizing: border-box;
 }
 
 .container-hero {
@@ -549,17 +551,16 @@ input[name="modo-card"] {
 /* ---------- Planos ---------- */
 
 .planos {
-    max-width: 1200px;
-    margin: var(--espaco-secao) auto;
-    padding: 0 20px;
-    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    margin-top: var(--espaco-secao);
 }
 
 .titulo-planos {
-    text-align: center;
-    color: #D64573;
-    font-size: clamp(26px, 3.6vw, 38px);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3.2vw, 38px);
     font-weight: 700;
+    color: #064E3B;
+    text-align: center;
     margin-bottom: 60px;
 }
 
@@ -567,191 +568,149 @@ input[name="modo-card"] {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    align-items: stretch;
 }
 
 .card-plano {
+    background: #ffffff;
     border: 2px solid #064E3B;
     border-radius: 20px;
-    padding: 35px 25px;
+    padding: 35px 28px 28px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     position: relative;
-    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    height: 100%;
 }
 
 .tag-destaque {
     position: absolute;
-    top: -16px;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #064E3B;
     color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 600;
-    padding: 6px 18px;
+    padding: 8px 22px;
     border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     white-space: nowrap;
 }
 
 .estrela-destaque {
-    color: yellow;
+    color: #FFC107;
+    font-size: 12px;
 }
 
+/* Cabeçalho do Card */
 .cabecalho-card {
     display: flex;
-    gap: 15px;
     align-items: flex-start;
-    margin-bottom: 25px;
-    min-height: 110px;
-}
-
-.descricao-plano {
-    font-size: 13px;
-    color: #666666;
-    line-height: 1.4;
-    min-height: 38px;
+    gap: 16px;
+    min-height: 95px;
 }
 
 .icone-plano {
-    width: 80px;
-    max-width: 80px;
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
 .subtitulo-card {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
     font-size: 11px;
-    letter-spacing: 1px;
-    color: #064E3B;
     font-weight: 700;
+    color: #064E3B;
+    letter-spacing: 0.5px;
 }
 
 .nome-plano {
-    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
     color: #064E3B;
-    margin-bottom: 5px;
-    line-height: 1.2;
+    margin-bottom: 4px;
+    line-height: 1.15;
+}
+
+.descricao-plano {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    color: #717171;
+    line-height: 1.35;
+}
+
+.chave-alterar-plano {
+    display: inline-flex;
+    background-color: #ffffff;
+    border: 1px solid #064E3B;
+    padding: 3px;
+    border-radius: 50px;
+    margin: 25px 0 10px;
+    width: 100%;
+}
+
+.espacador-chave {
+    height: 38px;
+    margin: 25px 0 10px;
+}
+
+.botao-periodo {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 7px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 50px;
+    color: #064E3B;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.25s ease;
+    user-select: none;
 }
 
 input[name^="periodo-"] {
     display: none;
 }
 
-.chave-alterar-plano {
-    display: flex;
-    border: 1px solid #064E3B;
-    border-radius: 50px;
-    padding: 3px;
-    margin-bottom: 20px;
-}
-
-.botao-periodo {
-    flex: 1;
-    text-align: center;
-    padding: 8px 0;
-    font-size: 13px;
-    font-weight: 600;
-    color: #064E3B;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    user-select: none;
-}
-
 #mensal-empresarial:checked ~ .chave-alterar-plano label[for="mensal-empresarial"],
-#mensal-industrial:checked ~ .chave-alterar-plano label[for="mensal-industrial"] {
-    background-color: #064E3B;
-    color: #ffffff;
-}
-
 #anual-empresarial:checked ~ .chave-alterar-plano label[for="anual-empresarial"],
+#mensal-industrial:checked ~ .chave-alterar-plano label[for="mensal-industrial"],
 #anual-industrial:checked ~ .chave-alterar-plano label[for="anual-industrial"] {
     background-color: #064E3B;
     color: #ffffff;
 }
 
-.preco-container {
-    margin-bottom: 15px;
-}
-
-.valor {
-    display: block;
-    font-size: clamp(32px, 4vw, 42px);
-    font-weight: 700;
-    color: #555555;
-}
-
-.periodo {
-    font-size: 12px;
-    color: #888888;
-}
-
-.preco-mensal,
 .preco-anual {
-    display: none;
+    display: none ;
 }
 
-input[id^="mensal-"]:checked ~ .preco-mensal {
-    display: block;
+.preco-mensal {
+    display: flex ;
 }
 
-input[id^="anual-"]:checked ~ .preco-anual {
-    display: block;
+#anual-empresarial:checked ~ .preco-mensal,
+#anual-industrial:checked ~ .preco-mensal {
+    display: none ;
 }
 
-.divisor-card {
-    border: none;
-    border-top: 1px solid #E0E0E0;
-    margin: 15px 0 25px;
+#anual-empresarial:checked ~ .preco-anual,
+#anual-industrial:checked ~ .preco-anual {
+    display: flex ;
 }
 
-.lista-recursos {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-    flex-grow: 1;
-    display: flex;
+.preco-container {
     flex-direction: column;
-}
-
-.lista-recursos li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: #555555;
-    margin-bottom: 14px;
-}
-
-.check-icone {
-    background-color: #064E3B;
-    color: #ffffff;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    flex-shrink: 0;
-}
-
-.botao-plano {
-    width: 100%;
-    margin-top: auto;
-    background-color: #064E3B;
-    color: #ffffff;
-    border: none;
-    padding: 14px;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.botao-plano:hover {
-    background-color: #0EB488;
+    margin: 15px 0 15px;
+    min-height: 62px;
 }
 
 .header-preco-anual {
@@ -760,23 +719,215 @@ input[id^="anual-"]:checked ~ .preco-anual {
     gap: 10px;
 }
 
+.valor {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #555555;
+    line-height: 1;
+}
+
+.periodo {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    color: #A0A0A0;
+    margin-top: 6px;
+}
+
 .badge-desconto-card {
     background-color: #D64573;
     color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+.divisor-card {
+    border: none;
+    border-top: 1px solid #E5E5E5;
+    margin: 10px 0 20px;
+}
+
+.lista-recursos {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.lista-recursos li {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13.5px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.3;
+}
+
+.lista-recursos .check-icone {
+    width: 20px;
+    height: 20px;
+    background-color: #064E3B;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.botao-plano {
+    width: 100%;
+    background-color: #064E3B;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.botao-plano:hover {
+    background-color: #04382A;
+}
+
+.botao-plano .seta {
+    font-size: 18px;
+}
+
+/* ---------- Cooperativa ---------- */
+
+.cooperativa {
+    width: 100%;
+    margin-top: var(--espaco-secao);
+    display: flex;
+    justify-content: center;
+}
+
+.container-cooperativa {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+    align-items: center;
+}
+
+.conteudo-cooperativa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 400px;
+}
+
+.badge-cooperativa {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
+    background-color: #DFEADE;
+    color: #064E3B;
+    padding: 6px 16px;
     border-radius: 50px;
-    display: inline-block;
-    animation: surgirBadge 0.3s ease;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
 }
 
-@keyframes surgirBadge {
-    from { opacity: 0; transform: scale(0.8); }
-    to   { opacity: 1; transform: scale(1); }
+.icone-folha-badge {
+    max-width: 20px;
+    align-items: center;
 }
 
+.titulo-cooperativa {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3.2vw, 38px);
+    font-weight: 700;
+    color: #064E3B;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
 
+.descricao-cooperativa {
+    font-family: 'Instrument Sans', sans-serif;
+    line-height: 1.6;
+    color: #717171;
+    max-width: 420px;
+    margin-bottom: 35px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.lista-recursos-cooperativa {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.item-recurso-cooperativa {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icone-recurso-cooperativa {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #DFEADE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icone-recurso-cooperativa img {
+    width: 24px;
+    height: 24px;
+}
+
+.item-recurso-cooperativa span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #717171;
+    line-height: 1.3;
+}
+
+.imagem-cooperativa {
+    width: 100%;
+    position: relative;
+}
+
+.imagem-cooperativa img {
+    width: 180%; 
+    max-width: none;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin-left: -90px;
+}
+
+/* ----- Media Queries ----- */
 
 @media (max-width: 1200px) {
     :root {
@@ -810,7 +961,7 @@ input[id^="anual-"]:checked ~ .preco-anual {
 
     .titulo-rosa,
     .titulo-verde {
-        font-size: 32px;
+        font-size: 20px;
     }
 
     .titulo-beneficios {
@@ -841,13 +992,30 @@ input[id^="anual-"]:checked ~ .preco-anual {
     .valor {
         font-size: 36px;
     }
+    
+    .container-cooperativa {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .imagem-cooperativa img {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        transform: none;
+    }
 }
 
 @media (max-width: 900px) {
 
     :root {
-        --espaco-secao: 70px;
-        --margem-lateral: 30px;
+        --espaco-secao: 60px;
+        --margem-lateral: 24px;
+    }
+
+    .container {
+        padding: var(--espaco-secao) var(--margem-lateral);
     }
 
     .navbar {
@@ -902,22 +1070,10 @@ input[id^="anual-"]:checked ~ .preco-anual {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    .logotipo-navbar {
-        margin-left: 5px;
-    }
-
-    .links-navbar {
-        gap: 18px;
-        margin-right: 5px;
-    }
-
-    .links-navbar a {
-        font-size: 11px;
-    }
-
     .hero {
-        min-height: auto;
-        padding: 140px 30px 70px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 120px 24px 60px;
     }
 
     .container-hero {
@@ -950,7 +1106,7 @@ input[id^="anual-"]:checked ~ .preco-anual {
     }
 
     .oferece {
-        max-width: 100px;
+        max-width: 100%;
         grid-template-columns: 1fr;
         gap: 30px;
     }
@@ -969,17 +1125,19 @@ input[id^="anual-"]:checked ~ .preco-anual {
     }
 
     .texto-oferece {
-        max-width: 600px;
+        max-width: 100%;
     }
 
     .card-cond-coop {
         margin-top: 80px;
-        padding: 55px 45px;
+        padding: 55px 35px;
     }
 
     .container-verde {
         margin-top: 80px;
         padding: 70px var(--margem-lateral);
+        margin-left: calc(var(--margem-lateral) * -1);
+        margin-right: calc(var(--margem-lateral) * -1);
     }
 
     .lista-funcionalidades {
@@ -993,16 +1151,16 @@ input[id^="anual-"]:checked ~ .preco-anual {
 
     .beneficios {
         margin: 60px auto;
-        padding: 50px 40px;
+        padding: 50px 30px;
     }
 
     .descricao-beneficios {
-        max-width: 600px;
+        max-width: 100%;
     }
 
     .grid-icones-beneficios {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 600px;
+        max-width: 100%;
         gap: 20px;
     }
 
@@ -1011,7 +1169,7 @@ input[id^="anual-"]:checked ~ .preco-anual {
     }
 
     .planos {
-        padding: 0 10px;
+        padding: 0;
     }
 
     .grid-planos {
@@ -1027,6 +1185,59 @@ input[id^="anual-"]:checked ~ .preco-anual {
 
     .cabecalho-card {
         min-height: auto;
+    }
+
+    .cooperativa {
+        margin-top: var(--espaco-secao);
+    }
+
+    .container-cooperativa {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .imagem-cooperativa {
+        order: -1; 
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .imagem-cooperativa img {
+        width: 100%;
+        max-width: 500px; 
+        height: auto;
+        margin-left: 0;
+        transform: none;
+    }
+
+    .conteudo-cooperativa {
+        align-items: center;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .descricao-cooperativa {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 450px;
+    }
+
+    .lista-recursos-cooperativa {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 380px; 
+        margin: 0 auto;    
+    }
+
+    .item-recurso-cooperativa {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; 
+        text-align: left;
     }
 }
 
@@ -1045,20 +1256,10 @@ input[id^="anual-"]:checked ~ .preco-anual {
         margin-left: 0;
     }
 
-    .links-navbar {
-        width: 100%;
-        margin: 0;
-        gap: 12px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .links-navbar a {
-        font-size: 11px;
-    }
-
     .hero {
-        padding: 145px 20px 50px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 110px 20px 50px;
     }
 
     .container-hero {
@@ -1088,7 +1289,6 @@ input[id^="anual-"]:checked ~ .preco-anual {
     }
 
     .container {
-        padding: var(--espaco-secao) var(--margem-lateral);
         border-radius: 25px 25px 0 0;
     }
 
@@ -1117,7 +1317,7 @@ input[id^="anual-"]:checked ~ .preco-anual {
 
     .card-cond-coop {
         margin-top: 65px;
-        padding: 35px 25px;
+        padding: 35px 20px;
         border-radius: 20px;
     }
 
@@ -1186,7 +1386,7 @@ input[id^="anual-"]:checked ~ .preco-anual {
 
     .beneficios {
         margin: 50px auto;
-        padding: 35px 25px;
+        padding: 35px 20px;
         border-radius: 22px;
     }
 
@@ -1263,6 +1463,10 @@ input[id^="anual-"]:checked ~ .preco-anual {
         font-size: 11px;
         padding: 6px 14px;
         white-space: nowrap;
+    }
+
+    .imagem-cooperativa img {
+        max-width: 360px;
     }
 }
 
@@ -1369,5 +1573,9 @@ input[id^="anual-"]:checked ~ .preco-anual {
 
     .botao-plano {
         font-size: 14px;
+    }
+
+    .imagem-cooperativa img {
+        max-width: 290px;
     }
 }

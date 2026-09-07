@@ -1754,6 +1754,10 @@ input[name^="periodo-"] {
         border-radius: 22px;
     }
 
+    .titulo-beneficios {
+        max-width: 300px;
+    }
+
     .descricao-beneficios {
         max-width: 100%;
         font-size: 16px;
@@ -1839,12 +1843,14 @@ input[name^="periodo-"] {
 
     .titulo-baixe {
         font-size: 34px;
+        margin: -5vw;
+        margin-bottom: 1px;
     }
 
     .descricao-baixe {
         margin-top: 18px;
         line-height: 1.5;
-        max-width: 320px;
+        max-width: 300px;
     }
 
     .botoes-baixe {
@@ -1878,12 +1884,17 @@ input[name^="periodo-"] {
     .titulo-quem-somos {
         font-size: 27px;
         margin-bottom: 18px;
+        text-align: center;
     }
 
     .descricao-missao,
     .descricao-quem-somos {
         margin-bottom: 28px;
         line-height: 1.5;
+        max-width: 320px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 40px;
     }
 
     .grid-estatisticas-missao,
@@ -1912,6 +1923,230 @@ input[name^="periodo-"] {
         white-space: normal;
         min-height: auto;
     }
+}
+
+/* ----- Seção Dúvidas (FAQ) ----- */
+
+.duvidas {
+    width: 100%;
+    margin-top: var(--espaco-secao);
+}
+
+.titulo-duvidas {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3.2vw, 38px);
+    font-weight: 700;
+    color: #D64573;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lista-duvidas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.item-duvida {
+    border-radius: 16px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, #D64573, #064E3B) 1;
+    border-radius: 16px;
+    background-origin: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.entrada-faq {
+    display: none;
+}
+
+.pergunta-faq {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 28px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(15px, 1.6vw, 18px);
+    font-weight: 700;
+    color: #064E3B;
+    user-select: none;
+    gap: 20px;
+}
+
+.icone-plus {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #DFEADE;
+    color: #064E3B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.icone-plus::before {
+    content: '+';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.resposta-faq {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    padding: 0 28px;
+}
+
+.resposta-faq p {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: clamp(14px, 1.4vw, 16px);
+    color: #717171;
+    line-height: 1.6;
+    font-weight: 500;
+    padding-bottom: 24px;
+}
+
+.entrada-faq:checked ~ .resposta-faq {
+    max-height: 300px;
+}
+
+.entrada-faq:checked ~ .pergunta-faq .icone-plus {
+    background-color: #D64573;
+    color: #ffffff;
+    transform: rotate(45deg);
+}
+
+/* ----- RODAPÉ (FOOTER) ----- */
+
+.rodape {
+    background-color: #064E3B;
+    color: #ffffff;
+    padding: 60px 20px 30px;
+    width: 100%;
+    margin-top: var(--espaco-secao);
+}
+
+.container-rodape {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+}
+
+.coluna-rodape {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-rodape img {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.slogan-rodape {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #E2E8F0;
+    max-width: 260px;
+    margin-bottom: 20px;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.redes-sociais a {
+    color: #ffffff;
+    font-size: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.redes-sociais a:hover {
+    opacity: 0.8;
+}
+
+.copyright {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    color: #A0AEC0;
+    margin-top: auto;
+}
+
+.divisor-vertical {
+    width: 2px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    align-self: stretch;
+}
+
+.titulo-coluna {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.links-navegacao {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links-navegacao a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    transition: opacity 0.2s ease;
+}
+
+.links-navegacao a:hover {
+    opacity: 0.8;
+}
+
+/* Coluna 3: Contato */
+.coluna-contato {
+    justify-content: space-between;
+}
+
+.info-contato p {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.links-termos {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    color: #A0AEC0;
+    text-align: right;
+    margin-top: auto;
+}
+
+.links-termos a {
+    color: #A0AEC0;
+    text-decoration: none;
+}
+
+.links-termos a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 420px) {
@@ -2056,10 +2291,93 @@ input[name^="periodo-"] {
     .titulo-missao,
     .titulo-quem-somos {
         font-size: 24px;
+        text-align: center;
     }
 
     .imagem-missao img,
     .imagem-quem-somos img {
         max-width: 290px;
+    }
+}
+
+@media (max-width: 900px) {
+    .rodape {
+        padding: 55px var(--margem-lateral) 28px;
+    }
+
+    .container-rodape {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .coluna-rodape {
+        flex: none;
+        width: 100%;
+        align-items: center;
+    }
+
+    .slogan-rodape {
+        max-width: 320px;
+    }
+
+    .redes-sociais {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        margin-top: 24px;
+    }
+
+    .divisor-vertical {
+        width: 100%;
+        height: 1px;
+        align-self: auto;
+    }
+
+    .links-navegacao {
+        align-items: center;
+    }
+
+    .coluna-contato {
+        gap: 25px;
+    }
+
+    .links-termos {
+        text-align: center;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .rodape {
+        padding: 45px var(--margem-lateral) 24px;
+    }
+
+    .container-rodape {
+        gap: 24px;
+    }
+
+    .logo-rodape img {
+        max-width: 155px;
+    }
+
+    .slogan-rodape {
+        font-size: 14px;
+    }
+
+    .titulo-coluna {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .links-navegacao a,
+    .info-contato p {
+        font-size: 14px;
+    }
+
+    .links-termos {
+        font-size: 11px;
     }
 }

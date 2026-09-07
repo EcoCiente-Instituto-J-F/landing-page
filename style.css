@@ -421,7 +421,7 @@ input[name="modo-card"] {
 }
 
 .conteudo-card-func {
-    padding: 24px 20px;
+    padding: 24px 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -450,6 +450,7 @@ input[name="modo-card"] {
     font-size: 14px;
     font-weight: 600;
     line-height: 1.5;
+    width: 190px;
 }
 
 /* ---------- Benefícios ---------- */
@@ -559,7 +560,7 @@ input[name="modo-card"] {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(28px, 3.2vw, 38px);
     font-weight: 700;
-    color: #064E3B;
+    color: #D64573;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -927,6 +928,91 @@ input[name^="periodo-"] {
     margin-left: -90px;
 }
 
+/* ----- Baixe aqui ----- */
+
+.baixe-aqui {
+    width: 100%;
+    margin-top: var(--espaco-secao);
+    display: flex;
+    justify-content: center;
+}
+
+.container-baixe {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    align-items: center;
+}
+
+.linha-full {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    border-top: 1px solid #064E3B;
+    margin-bottom: 23px;
+}
+
+.titulo-baixe {
+    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
+    color: #064E3B;
+    font-size: clamp(32px, 6.5vw, 78px);
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.descricao-baixe {
+    font-family: 'Instrument Sans', sans-serif;
+    color: #717171;
+    text-align: center;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 600;
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.botoes-baixe {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-top: 23px;
+    gap: 30px;
+}
+
+.botoes-baixe img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+}
+
+.mockup-baixe {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.mockup-baixe img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: -1%;
+}
+
+
+
 /* ----- Media Queries ----- */
 
 @media (max-width: 1200px) {
@@ -1004,6 +1090,22 @@ input[name^="periodo-"] {
         max-width: 100%;
         margin-left: 0;
         transform: none;
+    }
+
+    .titulo-baixe {
+        font-size: clamp(42px, 6.5vw, 64px);
+    }
+
+    .descricao-baixe {
+        max-width: 600px;
+    }
+
+    .botoes-baixe img {
+        max-width: 165px;
+    }
+
+    .mockup-baixe img {
+        max-width: 360px;
     }
 }
 
@@ -1223,6 +1325,22 @@ input[name^="periodo-"] {
         margin-left: auto;
         margin-right: auto;
         max-width: 450px;
+    }
+
+    .titulo-baixe {
+        font-size: clamp(36px, 7vw, 52px);
+    }
+
+    .descricao-baixe {
+        max-width: 550px;
+    }
+
+    .botoes-baixe {
+        gap: 20px;
+    }
+
+    .botoes-baixe img {
+        max-width: 150px;
     }
 
     .lista-recursos-cooperativa {
@@ -1468,6 +1586,37 @@ input[name^="periodo-"] {
     .imagem-cooperativa img {
         max-width: 360px;
     }
+
+    .baixe-aqui {
+        margin-top: 65px;
+    }
+
+    .titulo-baixe {
+        font-size: 34px;
+    }
+
+    .descricao-baixe {
+        margin-top: 18px;
+        line-height: 1.5;
+        max-width: 320px;
+    }
+
+    .botoes-baixe {
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .botoes-baixe img {
+        max-width: 140px;
+    }
+
+    .mockup-baixe {
+        margin-top: 25px;
+    }
+
+    .mockup-baixe img {
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 420px) {
@@ -1577,5 +1726,25 @@ input[name^="periodo-"] {
 
     .imagem-cooperativa img {
         max-width: 290px;
+    }
+
+    .titulo-baixe {
+        font-size: 28px;
+    }
+
+    .descricao-baixe {
+        font-size: 15px;
+    }
+
+    .botoes-baixe {
+        gap: 8px;
+    }
+
+    .botoes-baixe img {
+        max-width: 125px;
+    }
+
+    .mockup-baixe img {
+        max-width: 270px;
     }
 }

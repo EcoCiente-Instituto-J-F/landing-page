@@ -210,7 +210,10 @@ h2, h3, h4 {
 /* ---------- O EcoCiente oferece ---------- */
 
 .titulo-secao {
-    padding-bottom: 30px;
+    font-size: clamp(19px, 2.2vw, 25px);
+    color: #D64573;
+    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
+    font-weight: 600;
 }
 
 .oferece {
@@ -237,6 +240,9 @@ h2, h3, h4 {
 
 .titulo-card-oferece {
     font-size: clamp(19px, 2.2vw, 25px);
+    color: #064E3B;
+    font-family: 'Montserrat', 'Instrument Sans', sans-serif;
+    font-weight: 600;
 }
 
 .texto-oferece {
@@ -458,7 +464,7 @@ input[name="modo-card"] {
 .beneficios {
     max-width: 1200px;
     margin: 80px auto;
-    background: url('assets/imagemCasas.png') center/cover no-repeat;
+    background: url('assets/imagemCasas\ \(1\).png') center/cover no-repeat;
     border-radius: 30px;
     padding: 60px;
     color: #ffffff;
@@ -1424,6 +1430,10 @@ input[name^="periodo-"] {
         max-width: 400px;
     }
 
+    .titulo-secao {
+        text-align: center;
+    }
+
     .oferece {
         max-width: 100%;
         grid-template-columns: 1fr;
@@ -1432,6 +1442,10 @@ input[name^="periodo-"] {
 
     .card-oferece {
         padding: 0 0 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .card-oferece:not(:last-child) {
@@ -1441,6 +1455,10 @@ input[name^="periodo-"] {
 
     .card-oferece:last-child {
         padding-bottom: 0;
+    }
+
+    .icone-oferece {
+        justify-content: center;
     }
 
     .texto-oferece {
@@ -1631,6 +1649,23 @@ input[name^="periodo-"] {
         padding: 0;
     }
 
+    .titulo-secao {
+        text-align: center;
+    }
+
+    .texto-oferece {
+        text-align: center;
+    }
+
+    .icone-oferece {
+        justify-content: center;
+    }
+
+    .titulo-card-oferece {
+        display: block;
+        text-align: center;
+    }
+
     .logotipo-hero img {
         height: 28px;
         max-width: 100%;
@@ -1668,6 +1703,10 @@ input[name^="periodo-"] {
 
     .card-oferece {
         padding-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .card-oferece .titulo-verde {
@@ -2348,6 +2387,31 @@ input[name^="periodo-"] {
         text-align: center;
         margin-top: 0;
     }
+
+    .texto-oferece {
+        text-align: center;
+    }
+
+    .icone-oferece {
+        justify-content: center;
+    }
+
+    .titulo-card-oferece {
+        display: block;
+        text-align: center;
+    }
+
+    .texto-beneficios {
+        text-align: center;
+    }
+
+    .grid-icones-beneficios {
+        align-items: center;
+    }
+
+    .item-icone-beneficio {
+        align-items: center;
+    }
 }
 
 @media (max-width: 420px) {
@@ -2379,5 +2443,30 @@ input[name^="periodo-"] {
 
     .links-termos {
         font-size: 11px;
+    }
+
+    .texto-oferece {
+        text-align: center;
+    }
+
+    .icone-oferece {
+        justify-content: center;
+    }
+
+    .titulo-card-oferece {
+        display: block;
+        text-align: center;
+    }
+
+        .texto-beneficios {
+        text-align: center;
+    }
+
+    .grid-icones-beneficios {
+        align-items: center;
+    }
+
+    .item-icone-beneficio {
+        align-items: center;
     }
 }
